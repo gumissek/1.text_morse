@@ -17,15 +17,18 @@ keep_continue=True
 while keep_continue:
     word = input('Type word or statement to translate into morse (only letters/numbers), if you want to exit type q: ')
     if word!='q':
-        morse_word=''
+        if word!='':
+            morse_word=''
 
-        for char in word:
-            if char ==' ':
-                 morse_word+='    '
-            else:
-                morse_word+=morse[char.upper()]
-                morse_word+=' '
-        print(f'Here is your word/statement: \nYour word: {word}\nIn morse: {morse_word}')
+            for char in word:
+                if char ==' ':
+                     morse_word+='    '
+                else:
+                    morse_word+=morse[char.upper()]
+                    morse_word+=' '
+            print(f'Here is your word/statement: \nYour word: {word}\nIn morse: {morse_word}')
+        else:
+            print('Your word is empty, try typing your word again')
 
     else:
         keep_continue=False
