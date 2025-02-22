@@ -1,4 +1,3 @@
-from traceback import print_tb
 
 morse = {
     'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',     'F': '..-.',
@@ -14,7 +13,7 @@ morse = {
 
 keep_continue=True
 while keep_continue:
-    word = input('Type word or statement to translate into morse (only letters/numbers), if you want to exit type q: ')
+    word = input('Type word or statement to translate into morse (only letters/numbers)(exclude special characters e.g @/!), if you want to exit type q: ')
     if word!='q':
         if word!='':
             morse_word=''
@@ -23,8 +22,13 @@ while keep_continue:
                 if char ==' ':
                      morse_word+='    '
                 else:
-                    morse_word+=morse[char.upper()]
-                    morse_word+=' '
+                    try:
+                        morse_word+=morse[char.upper()]
+                    except KeyError:
+                        print(f'That character {char} is special character and doesnt exist in morse dictionary, add has not been added to final word')
+                        pass
+                    else:
+                        morse_word+=' '
             print(f'Here is your word/statement: \nYour word: {word}\nIn morse: {morse_word}')
         else:
             print('Your word is empty, try typing your word again')
