@@ -13,7 +13,7 @@ morse = {
 
 keep_continue=True
 while keep_continue:
-    word = input('Type word or statement to translate into morse (only letters/numbers)(exclude special characters e.g @/!), if you want to exit type q: ')
+    word = input('Type word or statement to translate into morse (only letters/numbers)(exclude special characters e.g @/!), if you want to exit type q: \n')
     if word!='q':
         if word!='':
             morse_word=''
