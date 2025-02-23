@@ -25,7 +25,7 @@ while keep_continue:
                     try:
                         morse_word+=morse[char.upper()]
                     except KeyError:
-                        print(f'That character {char} is special character and doesnt exist in morse dictionary, add has not been added to final word')
+                        print(f'That character {char} is special character and doesnt exist in morse dictionary and has not been added to final word')
                         pass
                     else:
                         morse_word+=' '
